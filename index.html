@@ -17,48 +17,96 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-<style>
+    <style>
       html,
-    .image_body {
-      position: relative;
-      height: 100%;
-    }
-    .margin{
-      margin-top: 100px;
-    }
-    .image_title{
-      text-align: center;
-      font-weight: bold;
-      font-family: fantasy;
-    }
-    .image_body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
+      .image_body {
+        position: relative;
+        height: 100%;
+      }
+      .margin {
+        margin-top: 100px;
+      }
+      .image_title {
+        text-align: center;
+        font-weight: bold;
+        font-family: fantasy;
+      }
+      .image_body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
 
-    swiper-container {
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+      swiper-container {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
 
-    swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 300px;
-      height: 300px;
-    }
+      swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
 
-    swiper-slide img {
-      display: block;
-      width: 100%;
-    }
-  </style>
-</style>
+      swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+      .final_final {
+        margin-top: 20px;
+      }
+    </style>
+    <style>
+      .btn-group {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      .yn {
+        position: absolute;
+        width: 150px;
+        height: inherit;
+        color: white;
+        font-size: 1.2em;
+        border-radius: 30px;
+        outline: none;
+        cursor: pointer;
+        box-shadow: 0 2px 4px gray;
+        border: 2px solid #e94d58;
+        font-size: 1.2em;
+        margin: auto;
+      }
+      .yn:nth-child(1) {
+        margin-left: -200px;
+        background: #e94d58;
+      }
+      .yn:nth-child(2) {
+        margin-right: -200px;
+        background: white;
+        color: #e94d58;
+      }
+      .quiz {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: whitesmoke;
+      }
+      .q1 {
+        text-align: center;
+        font-weight: bolder;
+        font-size: 3em;
+        color: #e94d58;
+        margin: 15px 0;
+      }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       class="u-script"
@@ -560,9 +608,9 @@
         </div>
       </div>
     </section>
-      <!-- <h1 class="image_title" text-align: center ;">Shun Shun's Galleries</h1> -->
+    <!-- <h1 class="image_title" text-align: center ;">Shun Shun's Galleries</h1> -->
 
-    <section class="image_body" style="background-color: white; ">
+    <section class="image_body" style="background-color: white">
       <h1 class="image_title">Shun Shun's Galleries</h1>
       <swiper-container
         class="mySwiper"
@@ -592,9 +640,7 @@
         <swiper-slide>
           <img src="./image slide/5.jpg" />
         </swiper-slide>
-        <swiper-slide>
-          <img src="./image slide/6.jpg" />
-        </swiper-slide>0
+        <swiper-slide> <img src="./image slide/6.jpg" /> </swiper-slide>0
         <swiper-slide>
           <img src="./image slide/8.jpg" />
         </swiper-slide>
@@ -606,7 +652,24 @@
         </swiper-slide>
       </swiper-container>
     </section>
-    <section class="u-clearfix u-valign-bottom u-section-5 margin" id="carousel_ca86">
+    <section class="quiz">
+      <div class="wrapper">
+        <h2 class="q1 question">Do you think you are cute?</h2>
+        <img
+          class="gif"
+          alt="gif"
+          src="https://media0.giphy.com/media/t8Lo2mPAzOcmVTgtGe/giphy.gif?cid=6c09b952231uyrnduhdsf4wqnxz03rv9wx3ni5sm0zolrxz3&ep=v1_stickers_related&rid=giphy.gif&ct=s"
+        />
+        <div class="btn-group">
+          <button class="yn yes-btn">Yes</button>
+          <button class="yn no-btn">No</button>
+        </div>
+      </div>
+    </section>
+    <section
+      class="final_final u-clearfix u-valign-bottom u-section-5 margin"
+      id="carousel_ca86"
+    >
       <div
         class="u-expanded-width u-gallery u-layout-grid u-lightbox u-no-transition u-show-text-none u-gallery-1"
       >
@@ -627,6 +690,31 @@
         </div>
       </div>
     </section>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script>
+      const wrapper = document.querySelector(".wrapper");
+      const question = document.querySelector(".question");
+      const gif = document.querySelector(".gif");
+      const yesBtn = document.querySelector(".yes-btn");
+      const noBtn = document.querySelector(".no-btn");
+
+      yesBtn.addEventListener("click", () => {
+        question.innerHTML = "You are cute !";
+        gif.src = "https://media1.giphy.com/media/iCVzZwwE6QNAV2tEE0/giphy.gif";
+      });
+
+      noBtn.addEventListener("mouseover", () => {
+        const noBtnRect = noBtn.getBoundingClientRect();
+        const maxX = window.innerWidth - noBtnRect.width;
+        const maxY = window.innerHeight - noBtnRect.height;
+
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        noBtn.style.left = randomX + "px";
+        noBtn.style.top = randomY + "px";
+      });
+    </script>
   </body>
 </html>
